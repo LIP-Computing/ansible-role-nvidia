@@ -1,4 +1,4 @@
-# docker build --rm -t os-cli-ubuntu16.04 .
+# docker build --rm -t nvidia-ubuntu16.04 .
 
 FROM lipcomputing/ansible-ubuntu16.04
 LABEL description="NVIDIA GPU" \
