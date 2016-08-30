@@ -7,6 +7,12 @@
 - name: wget nvidia driver
   get_url: url={{ nvidia_url }} dest=/usr/local mode=700
 
-# Option to install or not the kernel module
+# Option not to install the kernel module
 - name: install nvidia driver
-  command: ./{{ nvidia_driver }} -s --no-kernel-module chdir=/usr/local
+  command: ./{{ nvidia_driver }} -a -s --disable-nouveau --no-kernel-module chdir=/usr/local
+  when: not kmod_install
+
+# Option to install the kernel module
+- name: install nvidia driver
+  command: ./{{ nvidia_driver }} -a -s --disable-nouveau chdir=/usr/local
+  when: kmod_install
