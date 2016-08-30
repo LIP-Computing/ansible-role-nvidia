@@ -1,0 +1,11 @@
+---
+- include: "{{ansible_os_family}}.yml"
+
+- name: upgrade pip
+  pip: name=pip state=latest
+
+- name: wget nvidia driver
+  get_url: url={{ nvidia_url }} dest=/usr/local mode=700
+
+- name: install nvidia driver
+  command: ./{{ nvidia_driver }} -s --no-kernel-module chdir=/usr/local

@@ -1,0 +1,14 @@
+---
+# tasks for Centos 7
+  - name: Install epel-elease
+    yum: name=epel-release state=latest update_cache=yes
+
+  - name: Install necessary packages
+    yum: name={{ item }} state=latest update_cache=yes
+    with_items:
+      - gcc
+      - git
+      - python-devel
+      - python-pip
+      - sudo
+      - wget

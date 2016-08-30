@@ -1,0 +1,12 @@
+---
+# tasks specific to Ubuntu 16.04
+- name: Install necessary packages
+  apt: name={{ item }} state=latest update_cache=yes
+  with_items:
+    - gcc
+    - git
+    - python-dev
+    - python-pip
+    - sudo
+    - wget
+
