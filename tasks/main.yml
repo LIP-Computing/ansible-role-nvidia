@@ -24,11 +24,11 @@
 # mknod ... /dev/nvidia_uvm
 
 - name: copy nv-dev-create.sh
-  copy: src=nv-dev-create.sh dest=/usr/local/bin mode=700
+  copy: src=nv-dev-create.sh dest=/usr/local/bin/nv-dev-create.sh mode=700
   when: kmod_install
 
 - name: run nv-dev-create.sh
-  copy: /usr/local/bin/nv-dev-create.sh
+  command: /usr/local/bin/nv-dev-create.sh
   when: kmod_install
 
 - name: run nvidia-smi --persistence-mode=1
