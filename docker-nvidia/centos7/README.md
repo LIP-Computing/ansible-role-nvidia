@@ -21,7 +21,12 @@ docker build --rm -t nvidia-centos7 .
 ## Usage
 
 ```bash
-$ docker run -it nvidia-centos7 /bin/bash
+$ docker run \
+    --device=/dev/nvidia0:/dev/nvidia0 \
+    --device=/dev/nvidiactl:/dev/nvidiactl \
+    --device=/dev/nvidia-uvm:/dev/nvidia-uvm \
+    -it \
+    nvidia-centos7 /bin/bash
 ```
 
 License

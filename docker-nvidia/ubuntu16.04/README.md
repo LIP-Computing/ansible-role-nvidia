@@ -21,7 +21,13 @@ docker build --rm -t nvidia-ubuntu16.04 .
 ## Usage
 
 ```bash
-$ docker run -it nvidia-ubuntu16.04 /bin/bash
+$ docker run -it
+$ docker run \
+    --device=/dev/nvidia0:/dev/nvidia0 \
+    --device=/dev/nvidiactl:/dev/nvidiactl \
+    --device=/dev/nvidia-uvm:/dev/nvidia-uvm \
+    -it \
+    nvidia-ubuntu16.04 /bin/bash
 ```
 
 License
