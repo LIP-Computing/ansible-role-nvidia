@@ -1,4 +1,6 @@
 [![License](http://img.shields.io/:license-apache-blue.svg?style=flat-square)](http://www.apache.org/licenses/LICENSE-2.0.html)
+[![](https://images.microbadger.com/badges/image/lipcomputing/nvidia-centos7.svg)](http://microbadger.com/images/lipcomputing/nvidia-centos7 "Get your own image badge on microbadger.com")
+
 
 # nvidia-centos7
 
