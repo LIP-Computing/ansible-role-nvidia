@@ -1,6 +1,6 @@
 # docker build --rm -t nvidia-centos7 .
 
-FROM lipcomputing/ansible-centos7
+FROM lindigodatacloud/centos-sshd:7
 MAINTAINER Mario David <mariojmdavid@gmail.com>
 LABEL description="NVIDIA GPU" \
       org.label-schema.vcs-url="https://github.com/LIP-Computing/ansible-role-nvidia"

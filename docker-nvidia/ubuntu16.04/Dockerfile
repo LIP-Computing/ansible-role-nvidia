@@ -1,6 +1,6 @@
 # docker build --rm -t nvidia-ubuntu16.04 .
 
-FROM lipcomputing/ansible-ubuntu16.04
+FROM indigodatacloud/ubuntu-sshd:16.04
 LABEL description="NVIDIA GPU" \
       org.label-schema.vcs-url="https://github.com/LIP-Computing/ansible-role-nvidia"
 
