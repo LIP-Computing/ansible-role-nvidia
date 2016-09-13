@@ -13,6 +13,11 @@ Base:
 Image specific:
 - NVIDIA driver
 
+The NVIDIA driver version is tagged in the docker image as follows
+
+* TAG = nvdrv_352.93 : nvidia driver version 352.93
+* TAG = nvdrv_352.99 : nvidia driver version 352.99
+
 ## Build
 
 ```bash
