@@ -4,5 +4,5 @@ FROM indigodatacloud/ubuntu-sshd:16.04
 LABEL description="NVIDIA GPU" \
       org.label-schema.vcs-url="https://github.com/LIP-Computing/ansible-role-nvidia"
 
-RUN ansible-galaxy install LIP-Computing.ansible-role-nvidia && \
+RUN ansible-galaxy install LIP-Computing.ansible-role-nvidia,nvdrv_367.48 && \
     ansible-playbook /etc/ansible/roles/LIP-Computing.ansible-role-nvidia/tests/install-docker.yml
