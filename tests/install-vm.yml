@@ -2,4 +2,4 @@
 - hosts: localhost
   remote_user: root
   roles:
-    - { role: LIP-Computing.ansible-role-nvidia, nvidia_driver_version: 367.48, kmod_install: true }
+    - { role: LIP-Computing.ansible-role-nvidia, base_url: "http://www.lip.pt/~david", nvidia_driver_version: 367.48, kmod_install: true }
