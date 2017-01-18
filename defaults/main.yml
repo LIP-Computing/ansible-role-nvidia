@@ -5,9 +5,15 @@
 nvidia_driver_version: 352.99
 
 # Variables related to NVIDIA url and executable
-base_url: http://us.download.nvidia.com/XFree86/Linux-x86_64
+## This fetch from the NVidia site
+#base_url: http://us.download.nvidia.com/XFree86/Linux-x86_64
+#nvidia_driver: "NVIDIA-Linux-x86_64-{{ nvidia_driver_version }}.run"
+#nvidia_url: "{{ base_url }}/{{ nvidia_driver_version }}/{{ nvidia_driver }}"
+
+## This fetch from http://www.lip.pt/~david/nvidia/
+base_url: http://www.lip.pt/~david/nvidia
 nvidia_driver: "NVIDIA-Linux-x86_64-{{ nvidia_driver_version }}.run"
-nvidia_url: "{{ base_url }}/{{ nvidia_driver_version }}/{{ nvidia_driver }}"
+nvidia_url: "{{ base_url }}//{{ nvidia_driver }}"
 
 # Install nvidia kernel module:
 #     true for VMs and baremetal
