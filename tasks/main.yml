@@ -4,7 +4,7 @@
 - name: upgrade pip
   pip: name=pip state=latest
 
-- name: wget nvidia driver
+- name: wget nvidia driver {{ nvidia_driver }}
   get_url: url={{ nvidia_url }} dest=/usr/local mode=700
 
 # Option not to install the kernel module

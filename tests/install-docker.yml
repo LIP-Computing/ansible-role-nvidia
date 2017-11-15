@@ -2,4 +2,4 @@
 - hosts: localhost
   remote_user: root
   roles:
-    - { role: LIP-Computing.ansible-role-nvidia, kmod_install: false }
+    - { role: "LIP-Computing.ansible-role-nvidia", kmod_install: false, nvidia_driver_version: "{{ nv }}" }

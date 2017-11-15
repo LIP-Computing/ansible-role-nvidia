@@ -6,7 +6,4 @@ LABEL description="NVIDIA GPU" \
       org.label-schema.vcs-url="https://github.com/LIP-Computing/ansible-role-nvidia"
 
 RUN ansible-galaxy install LIP-Computing.ansible-role-nvidia && \
-    ansible-playbook \
-      /etc/ansible/roles/LIP-Computing.ansible-role-nvidia/tests/install-docker.yml \
-      --extra-vars "nvidia_driver_version: 375.20"
-
+    ansible-playbook --extra-vars "nv=375.20" /etc/ansible/roles/LIP-Computing.ansible-role-nvidia/tests/install-docker.yml
