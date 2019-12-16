@@ -14,6 +14,16 @@ The machine or VM should have a NVIDIA GPU, can be checked with:
 
     lspci |grep NVIDIA
 
+## Install role
+
+The role can be installed directly from github:
+
+    ansible-galaxy install git+https://github.com/LIP-Computing/ansible-role-nvidia.git
+
+From ansible Galaxy:
+
+    ansible-galaxy install -f LIP-Computing.ansible-role-nvidia
+
 ## Role Variables
 
 These variables should be changed depending on your type of machine.
