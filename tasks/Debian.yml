@@ -1,5 +1,5 @@
 ---
-# tasks specific to Ubuntu 16.04
+# tasks specific to Ubuntu
 - name: Install necessary packages
   apt: name={{ item }} state=latest update_cache=yes
   with_items:

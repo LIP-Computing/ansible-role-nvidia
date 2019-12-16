@@ -1,21 +1,30 @@
 ---
-# List of nvidia driver versions for the Tesla GPU
-# 352.99 352.93 352.79 352.68 352.63 352.55
+# List of nvidia driver versions for the Tesla k40 GPU
+# 440.33.01
 # NVIDIA driver version
-nvidia_driver_version: 352.99
+nvidia_driver_version: 440.33.01
+
+# nvidia quadro k5200
+# 440.44
 
 # Variables related to NVIDIA url and executable
 ## This fetch from the NVidia site
-#base_url: http://us.download.nvidia.com/XFree86/Linux-x86_64
-#nvidia_driver: "NVIDIA-Linux-x86_64-{{ nvidia_driver_version }}.run"
-#nvidia_url: "{{ base_url }}/{{ nvidia_driver_version }}/{{ nvidia_driver }}"
-
-## This fetch from http://www.lip.pt/~david/nvidia/
-base_url: http://www.lip.pt/~david/nvidia
+base_url: http://us.download.nvidia.com/XFree86/Linux-x86_64
 nvidia_driver: "NVIDIA-Linux-x86_64-{{ nvidia_driver_version }}.run"
-nvidia_url: "{{ base_url }}//{{ nvidia_driver }}"
+nvidia_url: "{{ base_url }}/{{ nvidia_driver_version }}/{{ nvidia_driver }}"
+
+## This fetch from http://www.lip.pt/~david/nvidia/ IF available
+# base_url: http://www.lip.pt/~david/nvidia
+# nvidia_driver: "NVIDIA-Linux-x86_64-{{ nvidia_driver_version }}.run"
+# nvidia_url: "{{ base_url }}//{{ nvidia_driver }}"
 
 # Install nvidia kernel module:
 #     true for VMs and baremetal
 #     false for Docker images
-kmod_install: false
+kmod_install: true
+
+# Create nvidia devices in the host, run script
+dev_create: false
+
+# Set nvidia-smi --persistence-mode=1
+nv_persistence: true

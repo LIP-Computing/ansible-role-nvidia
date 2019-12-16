@@ -1,8 +1,9 @@
 ---
-- include_tasks: "{{ansible_os_family}}.yml"
+- import_tasks: RedHat.yml
+  when: ansible_os_family == 'RedHat'
 
-- name: upgrade pip
-  pip: name=pip state=latest
+- import_tasks: Debian.yml
+  when: ansible_os_family == 'Debian'
 
 - name: wget nvidia driver {{ nvidia_driver }}
   get_url: url={{ nvidia_url }} dest=/usr/local mode=700
@@ -15,22 +16,23 @@
 # Option to install the kernel module
 - name: install nvidia driver with kernel module
   command: ./{{ nvidia_driver }} -a -s --disable-nouveau chdir=/usr/local
-  when: kmod_install
-
-# Copy and run a script to load nvidia kernel modules and create /dev/nvidia* if they don't exist
-# modprobe nvidia
-# modprobe nvidia-uvm
-# mknod ... /dev/nvidiactl
-# mknod ... /dev/nvidia_uvm
+  when:
+    - kmod_install
 
 - name: copy nv-dev-create.sh
   copy: src=nv-dev-create.sh dest=/usr/local/bin/nv-dev-create.sh mode=700
-  when: kmod_install
+  when:
+    - kmod_install
+    - dev_create
 
 - name: run nv-dev-create.sh
   command: /usr/local/bin/nv-dev-create.sh
-  when: kmod_install
+  when:
+    - kmod_install
+    - dev_create
 
 - name: run nvidia-smi --persistence-mode=1
   command: nvidia-smi --persistence-mode=1
-  when: kmod_install
+  when:
+    - kmod_install
+    - nv_persistence

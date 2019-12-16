@@ -3,14 +3,14 @@ galaxy_info:
   description: NVIDIA GPUs
   company: LIP
   license: Apache
-  min_ansible_version: 2.1
+  min_ansible_version: 2.4
   platforms:
   - name: EL
     versions:
     - 7
   - name: Ubuntu
     versions:
-    - xenial
+    - bionic
 
   galaxy_tags:
   - nvidia
