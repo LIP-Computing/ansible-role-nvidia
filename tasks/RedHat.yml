@@ -8,6 +8,7 @@
     with_items:
       - gcc
       - git
+      - kernel-devel
       - python-devel
       - python-pip
       - sudo
