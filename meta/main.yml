@@ -11,6 +11,8 @@ galaxy_info:
   - name: Ubuntu
     versions:
     - bionic
+    - disco
+    - eoan
 
   galaxy_tags:
   - nvidia
